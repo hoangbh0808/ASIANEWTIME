@@ -4,19 +4,19 @@ section.product-page.kv-section
 			.text.f-20.fw-700.text-main Bộ lọc
 			.wrapper
 				.dropdown.d-flex.align-center.justify-between
-					a.f-16.fw-500.text-main.d-flex.align-center(href="")
+					a.f-16.fw-500.text-main.d-flex.align-center(href="#")
 						em.ri-building-2-fill
 						.text Khu vực
 						em.ri-arrow-down-s-line
 					.dropdown-menu
 						ul
 							li
-								a(href="") Hà Nội
+								a(href="#") Hà Nội
 							li
-								a(href="") TP.Hồ Chí Minh
+								a(href="#") TP.Hồ Chí Minh
 			.wrapper
 				.dropdown.d-flex.align-center.justify-between
-					a.f-16.fw-500.text-main.d-flex.align-center(href="")
+					a.f-16.fw-500.text-main.d-flex.align-center(href="#")
 						em.ri-shape-2-fill
 						.text Dựu án
 						em.ri-arrow-down-s-line
@@ -29,7 +29,7 @@ section.product-page.kv-section
 		.product-wrapper
 			.row
 				-for(i=1; i<7; i++)
-					.col-lg-4
+					.col-lg-4.col-md-6.col-sm-6
 						.item-product.zoom-img
 							a.item-img(href="resale-detail.html")
 								img.lazyload(data-src="./img/product/product-"+i+".png", alt="")

@@ -349,7 +349,6 @@
 						background-color: #f80000
 					&:last-child
 						background: linear-gradient(45deg, #405de6, #5851db, #833ab4, #c13584, #e1306c, #fd1d1d)
-
 	@media(min-width: 1025px)
 		.logo-fake-header
 			position: initial
@@ -384,10 +383,12 @@
 							text-decoration: underline
 						.number
 							color: rgba(#ffffff,1)
-	// @media(min-width: 1200px)
-	// 	.menu-fake-header
-	// 		ul 
-				// padding-right: 70px
+	@media(max-width: 1366.98px)
+		.menu-fake-header
+			padding-top: 0
+			top: 33%
+		.menu-fake-bottom
+			top: 70%
 	@media screen and ( max-width: 1199.98px)
 		display: none
 	&.active
@@ -406,7 +407,7 @@
 				opacity: 1
 				transform: translateX(0)
 				&:nth-child(1)
-					display: none
+					display: .1s
 				&:nth-child(2)
 					transition-delay: .2s
 				&:nth-child(3)

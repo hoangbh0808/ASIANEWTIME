@@ -15,7 +15,7 @@
 					<xsl:text>nav-item active</xsl:text>
 				</xsl:attribute>
 			</xsl:if>
-			<a class="nav-link text-uppercase f-18 fw-800">
+			<a class="nav-link text-uppercase fw-800">
 				<xsl:attribute name="href">
 					<xsl:value-of select="Url"></xsl:value-of>
 				</xsl:attribute>

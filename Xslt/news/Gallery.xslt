@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xsl:stylesheet version="1.0"
-	xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
-	xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
-	<xsl:output method="html" indent="yes"/>
+<xsl:stylesheet version="1.0" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
+	<xsl:output method="html" indent="yes" />
 	<xsl:template match="/NewsList">
 		<div class="wrap-row-1">
 			<div class="row">
@@ -33,7 +31,8 @@
 		<xsl:if test="position() = 1">
 			<a class="box-img-big">
 				<xsl:attribute name="data-fancybox">
-					<xsl:text>gallery</xsl:text>
+					<xsl:text disable-output-escaping="yes">image-</xsl:text>
+					<xsl:value-of select="NewsId" disable-output-escaping="yes"></xsl:value-of>
 				</xsl:attribute>
 				<xsl:attribute name="href">
 					<xsl:value-of select="ImageUrl"></xsl:value-of>
@@ -41,7 +40,7 @@
 				<div class="img">
 					<img class="lazyload">
 						<xsl:attribute name="data-src">
-							<xsl:value-of select="ImageUrl"></xsl:value-of>
+							<xsl:value-of select="NewsImages[1]/ImageUrl"></xsl:value-of>
 						</xsl:attribute>
 						<xsl:attribute name="alt">
 							<xsl:value-of select="Title"></xsl:value-of>
@@ -49,12 +48,16 @@
 					</img>
 				</div>
 				<div class="icon">
-					<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt=""/>
+					<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt="" />
 				</div>
 				<div class="text">
 					<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 				</div>
+				<div style="display: none;">
+					<xsl:apply-templates select="NewsImages"></xsl:apply-templates>
+				</div>
 			</a>
+
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="News" mode="Small1">
@@ -62,7 +65,8 @@
 			<div class="col-lg-6">
 				<a class="box-img-small">
 					<xsl:attribute name="data-fancybox">
-						<xsl:text>gallery</xsl:text>
+						<xsl:text disable-output-escaping="yes">image-</xsl:text>
+						<xsl:value-of select="NewsId" disable-output-escaping="yes"></xsl:value-of>
 					</xsl:attribute>
 					<xsl:attribute name="href">
 						<xsl:value-of select="ImageUrl"></xsl:value-of>
@@ -70,7 +74,7 @@
 					<div class="img">
 						<img class="lazyload">
 							<xsl:attribute name="data-src">
-								<xsl:value-of select="ImageUrl"></xsl:value-of>
+								<xsl:value-of select="NewsImages[1]/ImageUrl"></xsl:value-of>
 							</xsl:attribute>
 							<xsl:attribute name="alt">
 								<xsl:value-of select="Title"></xsl:value-of>
@@ -78,20 +82,58 @@
 						</img>
 					</div>
 					<div class="icon">
-						<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt=""/>
+						<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt="" />
 					</div>
 					<div class="text">
 						<xsl:value-of select="Title"></xsl:value-of>
 					</div>
 				</a>
+				<div style="display: none;">
+					<xsl:apply-templates select="NewsImages"></xsl:apply-templates>
+				</div>
+			</div>
+		</xsl:if>
+	</xsl:template>
+	<xsl:template match="News" mode="Small2">
+		<xsl:if test="position() &gt;5 and position()&lt;10">
+			<div class="col-lg-6">
+				<a class="box-img-small">
+					<xsl:attribute name="data-fancybox">
+						<xsl:text disable-output-escaping="yes">image-</xsl:text>
+						<xsl:value-of select="NewsId" disable-output-escaping="yes"></xsl:value-of>
+					</xsl:attribute>
+					<xsl:attribute name="href">
+						<xsl:value-of select="ImageUrl"></xsl:value-of>
+					</xsl:attribute>
+					<div class="img">
+						<img class="lazyload">
+							<xsl:attribute name="data-src">
+								<xsl:value-of select="NewsImages[1]/ImageUrl"></xsl:value-of>
+							</xsl:attribute>
+							<xsl:attribute name="alt">
+								<xsl:value-of select="Title"></xsl:value-of>
+							</xsl:attribute>
+						</img>
+					</div>
+					<div class="icon">
+						<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt="" />
+					</div>
+					<div class="text">
+						<xsl:value-of select="Title"></xsl:value-of>
+					</div>
+				</a>
+				<div style="display: none;">
+					<xsl:apply-templates select="NewsImages"></xsl:apply-templates>
+				</div>
 			</div>
 		</xsl:if>
 	</xsl:template>
 	<xsl:template match="News" mode="Big2">
-		<xsl:if test="position() = 6">
+		<xsl:if test="position() = 10">
 			<a class="box-img-big">
 				<xsl:attribute name="data-fancybox">
-					<xsl:text>gallery</xsl:text>
+					<xsl:text disable-output-escaping="yes">image-</xsl:text>
+					<xsl:value-of select="NewsId" disable-output-escaping="yes"></xsl:value-of>
 				</xsl:attribute>
 				<xsl:attribute name="href">
 					<xsl:value-of select="ImageUrl"></xsl:value-of>
@@ -99,7 +141,7 @@
 				<div class="img">
 					<img class="lazyload">
 						<xsl:attribute name="data-src">
-							<xsl:value-of select="ImageUrl"></xsl:value-of>
+							<xsl:value-of select="NewsImages[1]/ImageUrl"></xsl:value-of>
 						</xsl:attribute>
 						<xsl:attribute name="alt">
 							<xsl:value-of select="Title"></xsl:value-of>
@@ -107,42 +149,39 @@
 					</img>
 				</div>
 				<div class="icon">
-					<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt=""/>
+					<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt="" />
 				</div>
 				<div class="text">
 					<xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
 				</div>
+				<div style="display: none;">
+					<xsl:apply-templates select="NewsImages"></xsl:apply-templates>
+				</div>
 			</a>
 		</xsl:if>
 	</xsl:template>
-	<xsl:template match="News" mode="Small2">
-		<xsl:if test="position()&gt;6">
-			<div class="col-lg-6">
-				<a class="box-img-small">
-					<xsl:attribute name="data-fancybox">
-						<xsl:text>gallery</xsl:text>
-					</xsl:attribute>
-					<xsl:attribute name="href">
+	<xsl:template match="NewsImages">
+		<xsl:if test="position()!=1">
+			<a>
+				<xsl:attribute name="data-fancybox">
+					<xsl:text disable-output-escaping="yes">image-</xsl:text>
+					<xsl:value-of select="../NewsId" disable-output-escaping="yes"></xsl:value-of>
+				</xsl:attribute>
+				<xsl:attribute name="href">
+					<xsl:value-of select="ImageUrl"></xsl:value-of>
+				</xsl:attribute>
+				<xsl:attribute name="title">
+					<xsl:value-of select="Title"></xsl:value-of>
+				</xsl:attribute>
+				<img>
+					<xsl:attribute name="src">
 						<xsl:value-of select="ImageUrl"></xsl:value-of>
 					</xsl:attribute>
-					<div class="img">
-						<img class="lazyload">
-							<xsl:attribute name="data-src">
-								<xsl:value-of select="ImageUrl"></xsl:value-of>
-							</xsl:attribute>
-							<xsl:attribute name="alt">
-								<xsl:value-of select="Title"></xsl:value-of>
-							</xsl:attribute>
-						</img>
-					</div>
-					<div class="icon">
-						<img class="lazyload" data-src="/Data/Sites/1/skins/default/img/gallery/icon-camera.png" alt=""/>
-					</div>
-					<div class="text">
+					<xsl:attribute name="alt">
 						<xsl:value-of select="Title"></xsl:value-of>
-					</div>
-				</a>
-			</div>
+					</xsl:attribute>
+				</img>
+			</a>
 		</xsl:if>
 	</xsl:template>
 </xsl:stylesheet>

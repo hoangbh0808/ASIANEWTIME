@@ -28,6 +28,28 @@
 			content: url('../img/icons/arrow-main.png')
 			position: absolute
 			left: 0
+	&-viewmore-2
+		position: relative
+		height: 48px
+		border-radius: 24px
+		background-color: $main
+		color: $title
+		font-size: 14/16*1rem
+		font-weight: 400
+		letter-spacing: 1.4px
+		transition: all 1s cubic-bezier(.22, .44, 0, 1)
+		padding-left: 40px
+		padding-right: 25px
+		&:hover
+			box-shadow: 5px -1px 15px rgba(0, 0, 0, 0.1)
+			background-color: #ffcb04
+			background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 203, 4, 0.5) 100%)
+			transition: all 1s cubic-bezier(.22, .44, 0, 1)
+			transform: translateY(3px)
+		&::before
+			content: url('../img/icons/arrow-main.png')
+			position: absolute
+			left: 0
 	&-signup
 		position: relative
 		display: flex
@@ -42,4 +64,3 @@
 		font-weight: 600
 		img
 			padding-right: 20px
-	

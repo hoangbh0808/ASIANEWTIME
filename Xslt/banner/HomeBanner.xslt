@@ -23,11 +23,20 @@
                 </img>
             </div>
             <div class="content">
-                <div class="text">
-                    <xsl:if test="Description != ''">
+                <xsl:if test="Description != ''">
+                    <div class="text">
                         <xsl:value-of select="Description" disable-output-escaping="yes"></xsl:value-of>
-                    </xsl:if>
-                </div>
+                    </div>
+                    <a class="btn btn-viewmore-2" href="">
+                        <xsl:attribute name="href">
+                            <xsl:value-of select="Url"></xsl:value-of>
+                        </xsl:attribute>
+                        <xsl:attribute name="title">
+                            <xsl:value-of select="Title"></xsl:value-of>
+                        </xsl:attribute>
+                        <xsl:text disable-output-escaping="yes">Tìm hiểu thêm</xsl:text>
+                    </a>
+                </xsl:if>
             </div>
         </div>
     </xsl:template>

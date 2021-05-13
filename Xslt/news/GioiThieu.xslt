@@ -41,9 +41,9 @@
                     <xsl:text disable-output-escaping="yes">about-</xsl:text>
                     <xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
                 </xsl:attribute>
-                <xsl:attribute name="setBackground">
+                <!-- <xsl:attribute name="setBackground">
                     <xsl:value-of disable-output-escaping="yes" select="ImageUrl"></xsl:value-of>
-                </xsl:attribute>
+                </xsl:attribute> -->
                 <div class="container">
                     <div class="main-title text-uppercase text-main text-center">
                         <xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
@@ -76,7 +76,7 @@
                 <div class="desc color-white f-18">
                     <xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
                 </div>
-                <a class="btn btn-view-more" href="">Xem chi tiết</a>
+                <div class="read-more">Xem thêm >></div>
             </div>
         </div>
     </xsl:template>
@@ -110,20 +110,69 @@
     </xsl:template>
     <xsl:template match="News" mode="LinhVuc">
         <div class="col-lg-4">
-            <div class="item zoom-img">
-                <div class="item-img">
-                    <img class="lazyload">
-                        <xsl:attribute name="data-src">
-                            <xsl:value-of select="ImageUrl"></xsl:value-of>
-                        </xsl:attribute>
-                        <xsl:attribute name="alt">
-                            <xsl:value-of select="Title"></xsl:value-of>
-                        </xsl:attribute>
-                    </img>
+            <a>
+                <xsl:attribute name="href">
+                    <xsl:text disable-output-escaping="yes">javascript:;</xsl:text>
+                </xsl:attribute>
+                <xsl:attribute name="title">
+                    <xsl:value-of select="Title"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="data-src">
+                    <xsl:text disable-output-escaping="yes">#popup-</xsl:text>
+                    <xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
+                </xsl:attribute>
+                <xsl:attribute name="data-fancybox">
+                    <xsl:text disable-output-escaping="yes">popup</xsl:text>
+                </xsl:attribute>
+                <div class="item zoom-img">
+                    <div class="item-img">
+                        <img class="lazyload">
+                            <xsl:attribute name="data-src">
+                                <xsl:value-of select="ImageUrl"></xsl:value-of>
+                            </xsl:attribute>
+                            <xsl:attribute name="alt">
+                                <xsl:value-of select="Title"></xsl:value-of>
+                            </xsl:attribute>
+                        </img>
+                    </div>
+                    <div class="item-content d-flex align-center justify-center">
+                        <div class="desc f-16 fw-900 text-main text-uppercase text-center">
+                            <xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+                        </div>
+                    </div>
                 </div>
-                <div class="item-content d-flex align-center justify-center">
-                    <div class="desc f-16 fw-900 text-main text-uppercase text-center">
-                        <xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+            </a>
+        </div>
+        <div style="display: none;" id="popup" class="popup">
+            <xsl:attribute name="id">
+                <xsl:text disable-output-escaping="yes">popup-</xsl:text>
+                <xsl:value-of disable-output-escaping="yes" select="position()"></xsl:value-of>
+            </xsl:attribute>
+            <div class="container">
+                <div class="wrapper-pupup">
+                    <div class="row">
+                        <div class="col-lg-6">
+                            <div class="popup-img">
+                                <img class="lazyload">
+                                    <xsl:attribute name="data-src">
+                                        <xsl:value-of select="ImageUrl"></xsl:value-of>
+                                    </xsl:attribute>
+                                    <xsl:attribute name="alt">
+                                        <xsl:value-of select="Title"></xsl:value-of>
+                                    </xsl:attribute>
+                                </img>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="wrapper-content">
+                                <div class="title f-24 fw-900 text-main text-uppercase text-center">
+                                    <xsl:value-of disable-output-escaping="yes" select="Title"></xsl:value-of>
+                                </div>
+                                <div class="content">
+                                    <xsl:value-of disable-output-escaping="yes" select="BriefContent"></xsl:value-of>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

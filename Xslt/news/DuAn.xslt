@@ -52,7 +52,7 @@
                             <xsl:attribute name="title">
                                 <xsl:value-of select="Title"></xsl:value-of>
                             </xsl:attribute>
-                            <xsl:text disable-output-escaping="yes">Xem tất cả</xsl:text>
+                            <xsl:text disable-output-escaping="yes">Xem chi tiết</xsl:text>
                         </a>
                     </div>
                 </div>

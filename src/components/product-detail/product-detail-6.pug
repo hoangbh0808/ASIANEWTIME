@@ -1,13 +1,14 @@
 section#pro-detail-2.resale-detail-6.kv-section
 	.background
-		img.lazyload(data-src="./img/product/detail-bg-2.png", alt="")
+		img(src="./img/product/detail-bg-2.png", alt="")
 	.container-fluid.p-0
 		.main-title.fw-900.text-main.text-uppercase.center mặt bằng phân lô
 		.image-map-wrapper
-			img.lazyload(data-src='./img/product/detail-9.png' usemap='#image-map')
+			#map
+				img.lazyload(data-src='./img/product/detail-9.png' usemap='#image-map')
 			map(name='image-map')
-				area.icon(target='' alt='' title='' href='' coords='734,295,792,289,868,312,845,616,647,614' shape='poly')
-				area(target='' alt='' title='' href='' coords='878,407,1012,519' shape='rect')
+				area.icon(target='' alt='' title='' href='' coords='734,295,792,289,868,312,845,616,647,614' shape='poly' data-name="Sun")
+				area(target='' alt='' title='' href='' coords='878,407,1012,519' shape='rect' data-name="Vljt")
 		//- .hidden
 		//- 	#image-map-tooltip-1
 		//- 		.figure-tooltip

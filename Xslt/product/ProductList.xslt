@@ -3,7 +3,7 @@
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
     xmlns:msxsl="urn:schemas-microsoft-com:xslt" exclude-result-prefixes="msxsl">
     <xsl:output method="html" indent="yes"/>
-    <xsl:template match="/ProductList">
+    <xsl:template match="/">
         <div class="filter-wrapper d-flex align-center">
             <div class="text f-20 fw-700 text-main">Bộ lọc</div>
             <div class="wrapper">
@@ -14,14 +14,7 @@
                         <em class="ri-arrow-down-s-line"></em>
                     </a>
                     <div class="dropdown-menu">
-                        <ul>
-                            <li>
-                                <a href="">Hà Nội</a>
-                            </li>
-                            <li>
-                                <a href="">TP.Hồ Chí Minh</a>
-                            </li>
-                        </ul>
+                       
                     </div>
                 </div>
             </div>
@@ -47,7 +40,7 @@
         </div>
         <div class="product-wrapper">
             <div class="row">
-                <xsl:apply-templates select="Product"></xsl:apply-templates>
+                <xsl:apply-templates select="/ProductList/Product"></xsl:apply-templates>
             </div>
         </div>
     </xsl:template>

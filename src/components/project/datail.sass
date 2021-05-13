@@ -1,22 +1,23 @@
 .pro-detail-1
 	position: relative
-	padding-top: 0
+	padding-top: 90px
+	margin-top: -60px
 	overflow: hidden
 	.background
 		position: absolute
 		top: -30%
 		right: 0
 		z-index: -1
-	.zone-nav
-		margin-top: 1px
-		width: 100%
-		margin-bottom: 50px
-		.categroly
-			padding: 0 26px
-			max-width: 100%
-			ul
-				li
-					width: 130px
+	// .zone-nav
+	// 	margin-top: 1px
+	// 	width: 100%
+	// 	margin-bottom: 50px
+	// 	.categroly
+	// 		padding: 0 26px
+	// 		max-width: 100%
+	// 		ul
+	// 			li
+	// 				width: 130px
 	.main-title
 		margin-bottom: 28px
 	.desc
@@ -45,6 +46,24 @@
 			.item-content
 				.item-title
 					padding-bottom: 15px
+	@media screen and ( max-width: 575.98px)
+		.main-title
+			margin-bottom: 15px
+		.desc
+			max-width: 100%
+			margin-bottom: 20px
+		.list-items
+			max-width: 100%
+			.item
+				padding: 0
+				.item-img
+					margin-bottom: 15px
+				.item-content
+					.item-title
+						padding-bottom: 0
+						font-size: 14/16*1rem
+					.item-desc
+						font-size: 14/16*1rem
 .pro-detail-2
 	padding-bottom: 0
 	.list-wrapper
@@ -61,7 +80,7 @@
 					ul
 						list-style: none
 						padding: 0
-						li 
+						li
 							position: relative
 							padding-left: 15px
 							p
@@ -76,7 +95,6 @@
 								color: $title
 								font-size: 8px
 								line-height: 26px
-
 		.img
 			width: 100%
 			position: relative
@@ -110,12 +128,60 @@
 					margin-right: auto
 					.desc
 						ul
-							li 
+							li
 								&::before
 									color: $main
 			.img
 				&::after
 					display: none
+			@media screen and ( max-width: 1280.98px)
+				.content-wrapper
+					.content
+						.desc
+							ul
+								height: 240px
+								overflow-y: auto
+								&::-webkit-scrollbar-track
+									box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+									background-color: $main
+								&::-webkit-scrollbar
+									width: 5px
+									height: 5px
+									background-color: $main
+								&::-webkit-scrollbar-thumb
+									box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+									background-color: rgba($color: #000000, $alpha: .2)
+		@media screen and ( max-width: 1199.98px)
+			.content-wrapper
+				padding-left: 15px
+				padding-right: 15px
+				.content
+					margin-left: 0
+					.main-title
+						margin-bottom: 15px
+						padding-bottom: 5px
+			&:last-child
+				.content-wrapper
+					padding-left: 15px
+		@media screen and ( max-width: 991.98px)
+			.img
+				+img-ratio(392/487)
+			.content-wrapper
+				.content
+					max-width: 100%
+					padding: 15px 0
+		@media screen and ( max-width: 767.98px)
+			.col-lg-5
+				order: 2
+			.col-lg-7
+				order: 1
+		@media screen and ( max-width: 575.98px)
+			.content-wrapper
+				padding: 15px
+			&:last-child
+				.content-wrapper
+					.content
+						padding-right: 15px
 .pro-detail-3
 	.main-title
 		margin-bottom: 30px
@@ -132,6 +198,35 @@
 				+img-ratio(220/390)
 			.item-content
 				padding: 20px 60px
+		@media screen and ( max-width: 1280.98px)
+			.swiper-button-next-2
+				right: 0
+				left: unset
+				z-index: 2
+			.swiper-button-prev-2
+				left: 0
+				z-index: 2
+		@media screen and ( max-width: 1199.98px)
+			.item-ult
+				height: 243px
+				.item-content
+					padding: 15px 30px
+			.swiper-button-next-2
+				right: 20px
+			.swiper-button-prev-2
+				left: 20px
+		@media screen and ( max-width: 991.98px)
+			.item-ult
+				height: 215px
+				.item-content
+					padding: 15px 7px
+		@media screen and ( max-width: 575.98px)
+			.item-ult
+				height: auto
+				margin-bottom: 0
+	@media screen and ( max-width: 575.98px)
+		.main-title
+			margin-bottom: 20px
 .pro-detail-4
 	.main-title
 		margin-bottom: 40px
@@ -139,6 +234,9 @@
 		width: 100%
 		height: 100%
 		border: solid 1px #e1e1e1
+	@media screen and ( max-width: 575.98px)
+		.main-title
+			margin-bottom: 20px
 .pro-detail-5
 	position: relative
 	padding-bottom: 0
@@ -169,6 +267,35 @@
 						&::after
 							opacity: 0
 							visibility: hidden
+	@media screen and ( max-width: 1024.98px)
+		padding-bottom: 30px
+		.kv-swiper
+			max-width: 100%
+			.swiper-container
+				overflow: hidden
+			.swiper-slide
+				width: 100% !important
+			.swiper-button-next
+				right: 0
+			.swiper-button-prev
+				left: 0
+	@media screen and ( max-width: 575.98px)
+		.main-title
+			margin-bottom: 20px
+		.kv-swiper
+			.swiper-button-next,
+			.swiper-button-prev
+				width: 50px
+				height: 50px
+			.swiper-button-next
+				right: 0
+				&::after
+					left: -100%
+			.swiper-button-prev
+				left: 0
+				&::after
+					right: -100%
+
 .pro-detail-6
 	position: relative
 	padding-top: 80px
@@ -198,7 +325,6 @@
 							padding-left: 15px
 							p
 								font-size: 1rem
-								font-weight: 700
 								color: #333333
 								line-height: 24px
 							&::before
@@ -218,3 +344,22 @@
 				padding-left: 0
 		&:last-child
 			margin-bottom: 0
+	@media screen and ( max-width: 991.98px)
+		padding-top: 30px
+		.list-wrapper
+			margin-bottom: 20px
+			.item-img
+				margin-bottom: 10px
+			.project-content
+				padding: 0
+				.content
+					max-width: 100%
+					.main-title
+						margin-bottom: 10px
+			&:nth-child(even)
+				.col-lg-7
+					order: 1
+				.col-lg-5
+					order: 2
+	@media screen and ( max-width: 575.98px)
+		padding-top: 25px

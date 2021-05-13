@@ -69,10 +69,10 @@
                 </xsl:attribute>
                 <div class="container">
                     <div class="main-title fw-900 text-main text-uppercase center">
-                        <xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
+                        <xsl:value-of select="News/Title" disable-output-escaping="yes"></xsl:value-of>
                     </div>
-                    <div class="desc text-center fw-700 f-16 color-text">
-                        <xsl:value-of select="BriefContent" disable-output-escaping="yes"></xsl:value-of>
+                    <div class="desc text-center f-16 color-text">
+                        <xsl:value-of select="News/BriefContent" disable-output-escaping="yes"></xsl:value-of>
                     </div>
                     <div class="list-wrapper">
                         <div class="row">
@@ -89,7 +89,7 @@
                     <xsl:value-of select="position()" disable-output-escaping="yes"></xsl:value-of>
                 </xsl:attribute>
                 <div class="background">
-                    <img class="lazyload" data-src="/Data/Sites/1/skins/default/img/product/detail-bg-2.png" alt=""/>
+                    <img src="/Data/Sites/1/skins/default/img/product/detail-bg-2.png" alt=""/>
                 </div>
                 <div class="container-fluid p-0">
                     <div class="main-title fw-900 text-main text-uppercase center">
@@ -128,10 +128,10 @@
         <div class="col-lg-5 p-0">
             <div class="content-wrapper d-flex flex-column justify-start" setBackground="/Data/Sites/1/skins/default/img/product/detail-bg.png">
                 <div class="content">
-                    <div class="main-title fw-700 text-main text-uppercase">
+                    <div class="main-title text-main text-uppercase">
                         <xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
                     </div>
-                    <div class="desch f-16 fw-700 color-text">
+                    <div class="desch f-16 color-text">
                         <xsl:value-of select="BriefContent" disable-output-escaping="yes"></xsl:value-of>
                     </div>
                 </div>
@@ -168,7 +168,7 @@
         </div>
     </xsl:template>
     <xsl:template match="News" mode="ThongTin">
-        <div class="col-lg-7">
+        <div class="col-lg-7 col-md-8">
             <div class="content">
                 <div class="main-title fw-900 text-main text-uppercase">
                     <xsl:value-of select="Title" disable-output-escaping="yes"></xsl:value-of>
@@ -176,7 +176,7 @@
                 <xsl:value-of select="BriefContent" disable-output-escaping="yes"></xsl:value-of>
             </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-4">
             <div class="img">
                 <img class="lazyload">
                     <xsl:attribute name="data-src">
@@ -211,8 +211,8 @@
     </xsl:template>
     <xsl:template match="NewsImages">
         <xsl:if test="position()&lt;3">
-            <div class="col-lg-6">
-                <a class="big-img zoom-img">
+            <div class="col-lg-6 col-md-6">
+                <a>
                     <xsl:attribute name="href">
                         <xsl:value-of select="ImageUrl"></xsl:value-of>
                     </xsl:attribute>
@@ -222,22 +222,24 @@
                     <xsl:attribute name="data-fancybox">
                         <xsl:text disable-output-escaping="yes">Image</xsl:text>
                     </xsl:attribute>
-                    <div class="img">
-                        <img class="lazyload">
-                            <xsl:attribute name="data-src">
-                                <xsl:value-of select="ImageUrl"></xsl:value-of>
-                            </xsl:attribute>
-                            <xsl:attribute name="alt">
-                                <xsl:value-of select="Title"></xsl:value-of>
-                            </xsl:attribute>
-                        </img>
+                    <div class="big-img zoom-img">
+                        <div class="img">
+                            <img class="lazyload">
+                                <xsl:attribute name="data-src">
+                                    <xsl:value-of select="ImageUrl"></xsl:value-of>
+                                </xsl:attribute>
+                                <xsl:attribute name="alt">
+                                    <xsl:value-of select="Title"></xsl:value-of>
+                                </xsl:attribute>
+                            </img>
+                        </div>
                     </div>
                 </a>
             </div>
         </xsl:if>
         <xsl:if test="position()&gt;2">
-            <div class="col-lg-4">
-                <a class="small-img zoom-img">
+            <div class="col-lg-4 col-md-4">
+                <a>
                     <xsl:attribute name="href">
                         <xsl:value-of select="ImageUrl"></xsl:value-of>
                     </xsl:attribute>
@@ -247,15 +249,17 @@
                     <xsl:attribute name="data-fancybox">
                         <xsl:text disable-output-escaping="yes">Image</xsl:text>
                     </xsl:attribute>
-                    <div class="img">
-                        <img class="lazyload">
-                            <xsl:attribute name="data-src">
-                                <xsl:value-of select="ImageUrl"></xsl:value-of>
-                            </xsl:attribute>
-                            <xsl:attribute name="alt">
-                                <xsl:value-of select="Title"></xsl:value-of>
-                            </xsl:attribute>
-                        </img>
+                    <div class="small-img zoom-img">
+                        <div class="img">
+                            <img class="lazyload">
+                                <xsl:attribute name="data-src">
+                                    <xsl:value-of select="ImageUrl"></xsl:value-of>
+                                </xsl:attribute>
+                                <xsl:attribute name="alt">
+                                    <xsl:value-of select="Title"></xsl:value-of>
+                                </xsl:attribute>
+                            </img>
+                        </div>
                     </div>
                 </a>
             </div>

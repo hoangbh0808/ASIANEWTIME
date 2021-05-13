@@ -1,24 +1,50 @@
 .about-1
-	min-height: 750px
+	min-height: 850px
 	position: relative
 	overflow: hidden
 	margin-top: -60px
 	z-index: 1
+	display: flex
+	align-items: center
+	&::after
+		position: absolute
+		width: 100%
+		height: 100%
+		content: ''
+		top: 0
+		left: 0
+		background-color: rgba($color: #000000, $alpha: .3)
 	.img
 		@media screen and ( min-width: 768px)
 			display: none
 	.col-content
+		position: relative
+		z-index: 2
 		padding-top: 50px
 		.main-title
 			&::after
 				background-color: $white
 		.desc
 			padding-top: 30px
-		.btn-view-more
-			margin-top: 40px
+			max-height: 250px
+			overflow: hidden
+			transition: all .5s ease-in-out
+			p
+				padding-bottom: 15px
+			&.active
+				max-height: 100%
+				overflow: visible
+		.read-more
+			color: $white
+			font-size: 1rem
+			cursor: pointer
+			transition: all 1s cubic-bezier(.22, .44, 0, 1)
+			&:hover
+				color: $main
 	@media screen and ( max-width: 767px)
 		background-image: none !important
 		min-height: auto
+		margin-top: 0
 		.col-content
 			padding-top: 20px
 			.main-title
@@ -46,7 +72,7 @@
 		margin-bottom: 80px
 		background-color: #f8f8f8
 		.item-img
-			+img-ratio(450/735)
+			+img-ratio(290/735)
 		.item-content
 			padding-left: 75px
 			padding-right: 75px
@@ -59,12 +85,35 @@
 				text-align: left
 				span
 					color: #ffcb04
-		&:last-child
-			margin-bottom: 0
+			.view-more
+				width: max-content
+				margin-top: 20px
+				color: #333333
+				&:hover
+					color: $main
+		&:nth-child(even)
 			.col-lg-7
 				order: 2
 			.col-lg-5
 				order: 1
+		&:last-child
+			margin-bottom: 0
+			.item-content
+				.desc
+					padding-right: 20px
+					max-height: 240px
+					overflow-y: auto
+					&::-webkit-scrollbar-track
+						box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+						background-color: rgba($color: #000000, $alpha: .5)
+
+					&::-webkit-scrollbar
+						width: 5px
+						height: 5px
+						background-color: $main
+					&::-webkit-scrollbar-thumb
+						box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+						background-color: $main
 	@media screen and ( max-width: 991px)
 		padding: 25px 0
 		.bg-about
@@ -85,6 +134,7 @@
 					margin-bottom: 15px
 .about-page-3
 	padding: 72px 0
+	background-color: #f8f8f8
 	.main-title
 		margin-bottom: 46px
 		&::after
@@ -107,4 +157,19 @@
 	@media screen and ( max-width: 575px)
 		.main-title
 			margin-bottom: 15px
-
+.popup
+	padding: 15px 0 !important
+	.wrapper-pupup
+		max-width: 650px
+		.popup-img
+			+img-ratio(600/600)
+		.wrapper-content
+			.content
+				margin-top: 10px
+				font-size: 1rem
+				line-height: 30px
+				color: #333333
+	.fancybox-close-small
+		width: 30px
+		height: 30px
+		padding: 0 5px !important

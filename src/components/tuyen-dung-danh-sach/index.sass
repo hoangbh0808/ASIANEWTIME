@@ -18,6 +18,20 @@
 			justify-content: center
 		.des
 			margin-top: 29px
+			max-height: 215px
+			overflow-y: auto
+			padding-right: 20px
+			&::-webkit-scrollbar-track
+				box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+				background-color: rgba($color: #000000, $alpha: .5)
+
+			&::-webkit-scrollbar
+				width: 5px
+				height: 5px
+				background-color: $white
+			&::-webkit-scrollbar-thumb
+				box-shadow: inset 0 0 6px rgba(255, 255, 255, 0)
+				background-color: $main
 			@media screen and ( max-width: 991px )
 				margin-bottom: 30px
 			p
@@ -46,7 +60,7 @@
 		background-color: #fff
 		padding: 17px 21px 23px 21px
 		border-bottom: 1px solid #e5e5e5
-		transition: .3s all  ease-in-out
+		transition: .3s all ease-in-out
 		&:hover
 			background-color: #ffcc00
 			background-image: linear-gradient(to top, rgba(255, 255, 255, 0.5) 0%, rgba(255, 203, 4, 0.5) 100%)
@@ -96,11 +110,11 @@
 					color: #ffcc00
 					margin-right: 26px
 					margin-left: -3px
-					transition: .3s all  ease-in-out
+					transition: .3s all ease-in-out
 					em
 						font-size: r(18px)
 						color: #ffcc00
-						transition: .3s all  ease-in-out
+						transition: .3s all ease-in-out
 				.date
 					em
 						font-size: r(16px)
@@ -109,7 +123,7 @@
 				font-size: r(14px)
 				font-weight: 500
 				position: relative
-				transition: .3s all  ease-in-out
+				transition: .3s all ease-in-out
 				&::before
 					position: absolute
 					content: ''
@@ -118,8 +132,4 @@
 					width: 0%
 					height: 1px
 					background-color: #333333
-					transition: .3s all  ease-in-out
-
-
-
-
+					transition: .3s all ease-in-out
